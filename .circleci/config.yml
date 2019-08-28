@@ -4,6 +4,8 @@ jobs:
     working_directory: ~/work
     docker:
       - image: circleci/node:10.15.0
+        environment:
+          CIRCLE_TEST_ARTIFACTS: /tmp/artifacts
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_TEST_ARTIFACTS
