@@ -15,7 +15,8 @@ jobs:
       - run: npx lerna run build
       - run: npx codecov
       - run: sh .circleci/artifacts.sh
-      - run: sh .circleci/artifacts.sh
-        when: on_fail
+      - run:
+          command: sh .circleci/artifacts.sh
+          when: on_fail
       - store_artifacts:
           path: /tmp/artifacts
