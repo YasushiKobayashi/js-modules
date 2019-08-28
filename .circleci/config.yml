@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/work
+    docker:
+      - image: circleci/node:10.15.0
+    steps:
+      - checkout
+      - run: mkdir -p $CIRCLE_TEST_ARTIFACTS
+      - run: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run: yarn
+      - run: yarn audit
+      - run: npx lerna run lint:ts
+      - run: npx lerna run test
+      - run: npx lerna run build
+      - run:
+          command: |
+          npx lerna exec -- mkdir -p $CIRCLE_TEST_ARTIFACTS/$(cat package.json \
+          | grep name \
+          | head -1 \
+          | awk -F: '{ print $2 }' \
+          | sed 's/[",]//g' \
+          | tr -d '[[:space:]]');
+          npx lerna exec -- cp test-cover.html $CIRCLE_TEST_ARTIFACTS/$(cat package.json \
+          | grep name \
+          | head -1 \
+          | awk -F: '{ print $2 }' \
+          | sed 's/[",]//g' \
+          | tr -d '[[:space:]]');
+          npx lerna exec -- cp analyze.txt $CIRCLE_TEST_ARTIFACTS/$(cat package.json \
+          | grep name \
+          | head -1 \
+          | awk -F: '{ print $2 }' \
+          | sed 's/[",]//g' \
+          | tr -d '[[:space:]]')
+      - store_artifacts:
+          path: /tmp/artifacts

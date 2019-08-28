@@ -1,0 +1,60 @@
+{
+  "name": "extend-err",
+  "version": "1.0.2",
+  "description": "",
+  "author": "YasushiKobayashi <ptpadan@gmail.com>",
+  "homepage": "https://github.com/YasushiKobayashi/js-modules#readme",
+  "license": "ISC",
+  "main": "dist/extend-err.cjs.js",
+  "module": "dist/extend-err.esm.js",
+  "types": "dist/extend-err.d.ts",
+  "typings": "dist/extend-err.d.ts",
+  "typescript": {
+    "definition": "dist/extend-err.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasushiKobayashi/js-modules.git"
+  },
+  "scripts": {
+    "prepublish": "npm run build:production",
+    "build": "rollup -c",
+    "build:production": " NODE_ENV=production npm run build",
+    "start": "rollup -cw",
+    "watch": "rollup -cw",
+    "test": "jest --runInBand --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint --ext js --ext jsx --ext ts --ext tsx src",
+    "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
+    "fix": "prettier --parser typescript --write 'src/**/*.ts{,x}'"
+  },
+  "bugs": {
+    "url": "https://github.com/YasushiKobayashi/js-modules/issues"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "jest": "^24.9.0",
+    "jest-html-reporter": "^2.5.0",
+    "prettier": "^1.18.2",
+    "prettier-stylelint": "^0.4.2",
+    "rollup": "^1.20.2",
+    "rollup-plugin-analyzer": "^3.1.2",
+    "rollup-plugin-babili": "^3.1.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^1.1.6",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.23.0",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3"
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "root",
+    "private": true,
+    "workspaces": [
+        "src/*"
+    ],
+    "scripts": {
+        "test": "NODE_ENV=test jest --coverage",
+        "test:watch": "NODE_ENV=test jest --watch",
+        "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx ./ --ignore-path .gitignore",
+        "lint:sass": "stylelint --config .stylelintrc.yml 'src/**/*.tsx' 'packages/**/*.scss'",
+        "fix": "npm run fix:ts & npm run fix:sass",
+        "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
+        "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix"
+    },
+    "devDependencies": {
+        "lerna": "^3.16.4"
+    },
+    "dependencies": {}
+}
