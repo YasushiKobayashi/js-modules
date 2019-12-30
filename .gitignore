@@ -45,5 +45,4 @@ test-report.html
 tsconfig.tsbuildinfo
 .rpt2_cache
 dist
-dist/*
 analyze.txt
