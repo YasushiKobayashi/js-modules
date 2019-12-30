@@ -23,12 +23,9 @@
     "jsx": "react"
   },
   "exclude": [
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.story.ts",
-    "**/*.story.tsx",
+    "dist/*",
+    "dist",
+    "node_modules/*",
     "node_modules"
   ]
 }
