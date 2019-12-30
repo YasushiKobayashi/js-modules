@@ -24,7 +24,7 @@
     "watch": "rollup -cw",
     "test": "jest --runInBand --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint --ext js --ext jsx --ext ts --ext tsx src",
+    "lint": "yarn lint:ts",
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
     "fix": "prettier --parser typescript --write 'src/**/*.ts{,x}'"
   },
