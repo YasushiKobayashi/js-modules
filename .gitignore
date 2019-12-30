@@ -41,11 +41,9 @@ bundle.js
 log/
 tags
 .mypy_cache
-.next
-out
-dist/*
 test-report.html
 tsconfig.tsbuildinfo
 .rpt2_cache
+dist
 dist/*
 analyze.txt

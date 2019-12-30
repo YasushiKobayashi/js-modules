@@ -1,6 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "declaration": true,
+    "incremental": false,
     "module": "ES2015",
     "target": "es5",
     "baseUrl": "./src",
