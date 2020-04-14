@@ -5,8 +5,9 @@
     "src/*"
     ],
     "scripts": {
-      "build": "lerna exec --parallel -- yarn build",
-      "watch": "lerna exec --parallel -- yarn watch",
+      "build": "lerna run --parallel build",
+      "watch": "lerna run --parallel watch",
+      "codecov": "lerna exec --parallel -- npx codecov",
       "test": "lerna run --stream --parallel test",
       "test:watch": "lerna exec --parallel -- yarn test:watch --updateSnapshot",
       "type-check": "lerna run --stream --parallel type-check",
