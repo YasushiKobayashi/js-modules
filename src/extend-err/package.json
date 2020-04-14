@@ -20,11 +20,9 @@
     "prepublish": "npm run build:production",
     "build": "rollup -c",
     "build:production": " NODE_ENV=production npm run build",
-    "start": "rollup -cw",
     "watch": "rollup -cw",
     "test": "jest --runInBand --coverage",
     "test:watch": "jest --watch",
-    "lint": "yarn lint:ts",
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
     "fix": "prettier --parser typescript --write 'src/**/*.ts{,x}'"
   },

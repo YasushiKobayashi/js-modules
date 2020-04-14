@@ -11,10 +11,9 @@ jobs:
       - run: mkdir -p $CIRCLE_TEST_ARTIFACTS
       - run: curl -o- -L https://yarnpkg.com/install.sh | bash
       - run: yarn
-      - run: yarn audit
-      - run: npx lerna run lint:ts
-      - run: npx lerna run test
-      - run: npx lerna run build
+      - run: yarn lint:ts
+      - run: yarn test
+      - run: yarn build
       - run: npx codecov
       - run: sh .circleci/artifacts.sh
       - run:
