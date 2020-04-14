@@ -1,0 +1,40 @@
+name: Main workflow
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["12"]
+    env:
+      NODE_ENV: test
+      ENV: develop
+      TEST_ARTIFACTS: /tmp/artifacts
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - run: mkdir -p $TEST_ARTIFACTS
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+      - run: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run: yarn
+        if: steps.cache.outputs.cache-hit != 'true'
+      - run: yarn lint:ts
+      - run: yarn test
+      - run: yarn type-check
+      - run: yarn build
+      - run: yarn codecov
+      # - run: yarn cp-artifacts --stream
+      # - run: yarn cp-artifacts --stream
+      #   if: failure()
+      # - uses: actions/upload-artifact@master
+      #   with:
+      #     name: test-artifacts
+      #     path: /tmp/artifacts
+        env:
+          CI: true
