@@ -15,7 +15,8 @@
       "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx ./ --ignore-path .gitignore",
       "lint:sass": "stylelint --config .stylelintrc.yml 'packages/**/*.tsx' 'packages/**/*.scss'",
       "fix": "npm run fix:ts",
-      "fix:ts": "prettier --parser typescript --write 'packages/**/*.ts{,x}'"
+      "fix:ts": "prettier --parser typescript --write 'packages/**/*.ts{,x}'",
+      "cp-artifacts": "lerna run cp-artifacts --stream --parallel"
     },
     "devDependencies": {
       "@types/jest": "^25.2.1",

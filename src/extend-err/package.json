@@ -20,11 +20,14 @@
     "prepublish": "npm run build:production",
     "build": "rollup -c",
     "build:production": " NODE_ENV=production npm run build",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
     "watch": "rollup -cw",
     "test": "jest --runInBand --coverage",
     "test:watch": "jest --watch",
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
-    "fix": "prettier --parser typescript --write 'src/**/*.ts{,x}'"
+    "fix": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
+    "cp-artifacts": "mkdir -p $TEST_ARTIFACTS/utils && cp -fr analyze.txt test-report.html $TEST_ARTIFACTS/utils"
   },
   "bugs": {
     "url": "https://github.com/YasushiKobayashi/js-modules/issues"
