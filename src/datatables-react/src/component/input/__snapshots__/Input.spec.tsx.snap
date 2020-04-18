@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxjAm fKxEoa"
+  >
+    <input
+      class="react-datatable-input"
+      data-testid="react-datatable-input"
+      id="react-datatable-input"
+      type="text"
+      value="value"
+    />
+  </div>
+</DocumentFragment>
+`;

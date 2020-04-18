@@ -12,15 +12,31 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "incremental": true,
+    "declaration": true,
+    "esModuleInterop": true,
     "removeComments": false,
     "allowJs": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
+    "lib": [
+      "es2019",
+      "dom",
+      "dom.iterable"
+    ],
     "moduleResolution": "node",
-    "module": "commonjs",
-    "target": "esnext",
-    "jsx": "react"
+    "module": "ES2015",
+    "target": "es5",
+    "jsx": "react",
+    "plugins": [
+      { "transform": "ts-auto-mock/transformer", "cacheBetweenTests": false },
+      {
+        "name": "typescript-styled-plugin",
+        "tags": [
+          "styled",
+          "styledComponents"
+        ],
+      },
+    ]
   },
   "exclude": [
     "dist/*",

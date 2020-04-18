@@ -2,12 +2,14 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "incremental": false,
-    "module": "ES2015",
-    "target": "es5",
+    "allowJs": false,
+    "declaration": true,
     "baseUrl": ".",
     "rootDir": "./src",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": [
+        "src/*"
+      ],
       "*": [
         "typings/*",
         "src/typings/*"
@@ -15,6 +17,7 @@
     },
   },
   "include": [
-    "src"
+    "**/*.ts",
+    "**/*.tsx",
   ],
 }
