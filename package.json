@@ -43,7 +43,7 @@
     "rollup-plugin-typescript2": "0.27.0",
     "ts-jest": "25.3.1",
     "ts-loader": "6.2.2",
-    "typescript": "3.8.3"
+    "typescript": "3.9.7"
   },
   "dependencies": {
     "extend-err": "file:src/extend-err"
