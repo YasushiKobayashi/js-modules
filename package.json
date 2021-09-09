@@ -32,7 +32,7 @@
     "jest": "27.1.0",
     "jest-html-reporter": "3.4.1",
     "lerna": "4.0.0",
-    "prettier": "2.3.2",
+    "prettier": "2.4.0",
     "prettier-stylelint": "0.4.2",
     "rollup": "2.52.4",
     "rollup-plugin-analyzer": "4.0.0",
