@@ -30,7 +30,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.27.1",
     "jest": "27.4.0",
-    "jest-html-reporter": "3.4.1",
+    "jest-html-reporter": "3.10.2",
     "lerna": "4.0.0",
     "prettier": "2.5.0",
     "prettier-stylelint": "0.4.2",
